@@ -1,4 +1,4 @@
-import { Flex, Heading, Text } from "@/once-ui/components";
+import { Flex, Heading, Text, Line } from "@/once-ui/components";
 import MasonryGrid from "@/components/gallery/MasonryGrid";
 import { baseURL } from "@/app/resources";
 import { gallery, person } from "@/app/resources/content";
@@ -67,6 +67,8 @@ export default function Gallery() {
             {line}
           </Text>
         ))}
+        {/* Separator added between text and photos */}
+        <Line style={{ marginTop: "2rem", width: "100%" }} />
       </Flex>
       <MasonryGrid />
     </Flex>

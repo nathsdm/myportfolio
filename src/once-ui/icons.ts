@@ -37,7 +37,7 @@ import {
   PiMusicNoteDuotone,
 } from "react-icons/pi";
 
-import { FaDiscord, FaGithub, FaLinkedin, FaXTwitter, FaInstagram, FaSoundcloud, FaYoutube } from "react-icons/fa6";
+import { FaDiscord, FaGithub, FaLinkedin, FaXTwitter, FaInstagram, FaSoundcloud, FaYoutube, FaSpotify } from "react-icons/fa6";
 
 export const iconLibrary: Record<string, IconType> = {
   chevronUp: HiChevronUp,
@@ -73,9 +73,10 @@ export const iconLibrary: Record<string, IconType> = {
   arrowUpRightFromSquare: HiArrowTopRightOnSquare,
   play: HiPlay,
   pause: HiPause,
-  disc: PiDiscDuotone,
   instagram: FaInstagram,
   soundcloud: FaSoundcloud,
   youtube: FaYoutube,
+  spotify: FaSpotify,
   music: PiMusicNoteDuotone,
+  whosampled: PiDiscDuotone,
 };

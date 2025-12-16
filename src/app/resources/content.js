@@ -208,13 +208,23 @@ const gallery = {
       alt: "image 3",
       orientation: "horizontal",
     },
+    {
+      src: "/images/gallery/4.jpg",
+      alt: "image 4",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/5.jpg",
+      alt: "image 5",
+      orientation: "horizontal",
+    },
   ],
 };
 
 const music = {
   label: "Music",
   title: "My Music",
-  description: `Here you can listen to some of my music, from beats I've made for SoundCloud to piano pieces I've played on Instagram.`,
+  description: `Here you can listen to some of my music, from beats I've made to piano pieces I've played.`,
   social: [
     {
       name: "Instagram",
@@ -231,6 +241,16 @@ const music = {
       icon: "youtube",
       link: "https://www.youtube.com/@polychordsradio",
     },
+    {
+      name: "Spotify",
+      icon: "spotify",
+      link: "https://open.spotify.com/user/zhet3xu50kaalbvwdlk1cv41z?si=8326018250834030",
+    },
+    {
+      name: "Whosampled",
+      icon: "whosampled",
+      link: "https://www.whosampled.com/user/Nathsdm/",
+    }
   ],
   audio: [
     {

@@ -53,7 +53,6 @@ export default function Music() {
                     }),
                 }}
             />
-            <Text variant="body-default-l" marginBottom="l">{music.description}</Text>
 
             <Flex gap="16" marginBottom="32">
                 {music.social.map((socialLink) => (

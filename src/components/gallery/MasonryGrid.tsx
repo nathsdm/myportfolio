@@ -20,9 +20,12 @@ export default function MasonryGrid() {
       columnClassName={styles.masonryGridColumn}
     >
       {gallery.images.map((image, index) => (
-        <div key={index} className={styles.gridItem}>
+        <div
+          key={index}
+          className={styles.gridItem}
+          style={{ animationDelay: `${index * 0.2}s` }}
+        >
           <SmartImage
-            key={index}
             radius="m"
             aspectRatio={image.orientation === "horizontal" ? "16 / 9" : "9 / 16"}
             src={image.src}
