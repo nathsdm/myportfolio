@@ -36,7 +36,7 @@ npm install
 npm run dev
 ```
 
-## ** Tech Stack**
+## **Tech Stack**
 
 - **Framework**: [Next.js](https://nextjs.org/)
 - **Styling**: [Once UI](https://once-ui.com/) / CSS Modules
