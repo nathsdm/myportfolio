@@ -1,6 +1,7 @@
 "use client";
 
 import React, { CSSProperties, useState, useRef, useEffect } from "react";
+import { createPortal } from "react-dom";
 import Image from "next/image";
 
 import { Flex, Skeleton } from "@/once-ui/components";
@@ -32,7 +33,12 @@ const SmartImage: React.FC<SmartImageProps> = ({
   ...rest
 }) => {
   const [isEnlarged, setIsEnlarged] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
   const imageRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   const handleClick = () => {
     if (enlarge) {
@@ -62,26 +68,6 @@ const SmartImage: React.FC<SmartImageProps> = ({
       document.body.style.overflow = "auto";
     };
   }, [isEnlarged]);
-
-  const calculateTransform = () => {
-    if (!imageRef.current) return {};
-
-    const rect = imageRef.current.getBoundingClientRect();
-    const scaleX = window.innerWidth / rect.width;
-    const scaleY = window.innerHeight / rect.height;
-    const scale = Math.min(scaleX, scaleY) * 0.9;
-
-    const translateX = (window.innerWidth - rect.width) / 2 - rect.left;
-    const translateY = (window.innerHeight - rect.height) / 2 - rect.top;
-
-    return {
-      transform: isEnlarged
-        ? `translate(${translateX}px, ${translateY}px) scale(${scale})`
-        : "translate(0, 0) scale(1)",
-      transition: "all 0.3s ease-in-out",
-      zIndex: isEnlarged ? 2 : undefined,
-    };
-  };
 
   const isYouTubeVideo = (url: string) => {
     const youtubeRegex =
@@ -116,7 +102,6 @@ const SmartImage: React.FC<SmartImageProps> = ({
           height: aspectRatio ? "" : height ? `${height}rem` : "100%",
           aspectRatio,
           borderRadius: isEnlarged ? "0" : undefined,
-          ...calculateTransform(),
         }}
         onClick={handleClick}
         {...rest}
@@ -164,30 +149,31 @@ const SmartImage: React.FC<SmartImageProps> = ({
         )}
       </Flex>
 
-      {isEnlarged && enlarge && (
+      {isMounted && isEnlarged && enlarge && createPortal(
         <Flex
-          horizontal="center"
-          vertical="center"
-          position="fixed"
           background="overlay"
           onClick={handleClick}
+          position="fixed"
           top="0"
           left="0"
-          opacity={isEnlarged ? 100 : 0}
+          opacity={100}
           cursor="interactive"
           transition="macro-medium"
           style={{
             width: "100vw",
             height: "100vh",
+            zIndex: 9999,
           }}
         >
           <Flex
             position="relative"
             style={{
               height: "100vh",
-              transform: "translate(-50%, -50%)",
+              width: "100vw",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
             }}
-            onClick={(e) => e.stopPropagation()}
           >
             {isVideo ? (
               <video
@@ -215,7 +201,8 @@ const SmartImage: React.FC<SmartImageProps> = ({
               />
             )}
           </Flex>
-        </Flex>
+        </Flex>,
+        document.body
       )}
     </>
   );

@@ -1,62 +1,54 @@
 import { InlineCode } from "@/once-ui/components";
 
 const person = {
-  firstName: "Selene",
-  lastName: "Yu",
+  firstName: "Nathan",
+  lastName: "Soares de Melo",
   get name() {
     return `${this.firstName} ${this.lastName}`;
   },
-  role: "Design Engineer",
+  role: "Engineering Student",
   avatar: "/images/avatar.jpg",
-  location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
+  location: "Paris, France",
+  languages: ["French", "English"],
 };
 
 const newsletter = {
-  display: true,
+  display: false,
   title: <>Subscribe to {person.firstName}'s Newsletter</>,
   description: (
     <>
-      I occasionally write about design, technology, and share thoughts on the intersection of
-      creativity and engineering.
+      I occasionally write about data science, engineering, and share thoughts on the intersection of
+      technology and research.
     </>
   ),
 };
 
 const social = [
-  // Links are automatically displayed.
-  // Import new icons in /once-ui/icons.ts
   {
     name: "GitHub",
     icon: "github",
-    link: "https://github.com/once-ui-system/nextjs-starter",
+    link: "https://github.com/nathsdm",
   },
   {
     name: "LinkedIn",
     icon: "linkedin",
-    link: "https://www.linkedin.com/company/once-ui/",
-  },
-  {
-    name: "X",
-    icon: "x",
-    link: "",
+    link: "https://www.linkedin.com/in/nathan-soares-de-melo",
   },
   {
     name: "Email",
     icon: "email",
-    link: "mailto:example@gmail.com",
+    link: "mailto:nathan.soaresdemelo@ensae.fr",
   },
 ];
 
 const home = {
   label: "Home",
   title: `${person.name}'s Portfolio`,
-  description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Design engineer and builder</>,
+  description: `Portfolio website showcasing my work as an ${person.role}`,
+  headline: <>Engineering Student specializing in Data Science</>,
   subline: (
     <>
-      I'm Selene, a design engineer at <InlineCode>FLY</InlineCode>, where I craft intuitive
-      <br /> user experiences. After hours, I build my own projects.
+      Second-year student at <InlineCode>ENSAE Paris</InlineCode>, specializing in data science and applied statistics.
     </>
   ),
 };
@@ -73,7 +65,7 @@ const about = {
     display: true,
   },
   calendar: {
-    display: true,
+    display: false,
     link: "https://cal.com",
   },
   intro: {
@@ -81,52 +73,58 @@ const about = {
     title: "Introduction",
     description: (
       <>
-        Selene is a Jakarta-based design engineer with a passion for transforming complex challenges
-        into simple, elegant design solutions. Her work spans digital interfaces, interactive
-        experiences, and the convergence of design and technology.
+        I am a second-year student at ENSAE, specializing in data science and applied statistics.
+        I have a strong background in mathematics, physics, and informatics from my preparatory classes.
+        I am passionate about applying AI and statistical models to solve real-world problems,
+        as demonstrated by my work in healthcare and identity verification.
       </>
     ),
   },
   work: {
-    display: true, // set to false to hide this section
+    display: true,
     title: "Work Experience",
     experiences: [
       {
-        company: "FLY",
-        timeframe: "2022 - Present",
-        role: "Senior Design Engineer",
+        company: "IBISC",
+        timeframe: "2024",
+        role: "Internship – Research in AI & Healthcare",
         achievements: [
           <>
-            Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user
-            engagement and 30% faster load times.
+            Researched explainable AI in healthcare, applying symbolic methods to improve model transparency.
           </>,
           <>
-            Spearheaded the integration of AI tools into design workflows, enabling designers to
-            iterate 50% faster.
+            Developed statistical models for data analysis in a laboratory setting (research paper written in English).
           </>,
         ],
-        images: [
-          // optional: leave the array empty if you don't want to display images
-          {
-            src: "/images/projects/project-01/cover-01.jpg",
-            alt: "Once UI Project",
-            width: 16,
-            height: 9,
-          },
-        ],
+        images: [],
       },
       {
-        company: "Creativ3",
-        timeframe: "2018 - 2022",
-        role: "Lead Designer",
+        company: "DocuSign",
+        timeframe: "2023",
+        role: "Internship – Machine Learning Project",
         achievements: [
           <>
-            Developed a design system that unified the brand across multiple platforms, improving
-            design consistency by 40%.
+            Built and optimized ML models for identity verification, improving performance by 10%.
           </>,
           <>
-            Led a cross-functional team to launch a new product line, contributing to a 15% increase
-            in overall company revenue.
+            Processed and analysed large datasets using Python & KQL.
+          </>,
+          <>
+            Collaborated in an international engineering team.
+          </>,
+        ],
+        images: [],
+      },
+      {
+        company: "PNGATE",
+        timeframe: "2022 - 2023",
+        role: "Client Relations Manager",
+        achievements: [
+          <>
+            Managed client relations with Planète Mer.
+          </>,
+          <>
+            Assisted in project coordination and communication strategies.
           </>,
         ],
         images: [],
@@ -134,54 +132,45 @@ const about = {
     ],
   },
   studies: {
-    display: true, // set to false to hide this section
+    display: true,
     title: "Studies",
     institutions: [
       {
-        name: "University of Jakarta",
-        description: <>Studied software engineering.</>,
+        name: "NARA Institute of Science and Technology",
+        description: <>Biological Data Science Laboratory (exchange student) – biology, data science, machine learning.</>,
       },
       {
-        name: "Build the Future",
-        description: <>Studied online marketing and personal branding.</>,
+        name: "ENSAE Paris",
+        description: <>Engineering school specializing in statistics and economics – economics, statistics, data science.</>,
+      },
+      {
+        name: "Télécom SudParis",
+        description: <>Engineering school specializing in digital sciences – networking, artificial intelligence, programming.</>,
+      },
+      {
+        name: "Lycée Gay-Lussac",
+        description: <>Preparatory classes for the French Grandes Écoles (MPSI then MP track) – mathematics, physics, informatics.</>,
       },
     ],
   },
   technical: {
-    display: true, // set to false to hide this section
+    display: true,
     title: "Technical skills",
     skills: [
       {
-        title: "Figma",
-        description: <>Able to prototype in Figma with Once UI with unnatural speed.</>,
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-02.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-          {
-            src: "/images/projects/project-01/cover-03.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-        ],
+        title: "Programming & Tools",
+        description: <>Python (advanced), R, SQL, Matlab, Java, Git, Bash, Jira, Slack, Microsoft Office.</>,
+        images: [],
       },
       {
-        title: "Next.js",
-        description: <>Building next gen apps with Next.js + Once UI + Supabase.</>,
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-04.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-        ],
+        title: "Languages",
+        description: <>French (Native), English (Upper intermediate), Japanese (Basic).</>,
+        images: [],
+      },
+      {
+        title: "Hobbies",
+        description: <>Aviation (BIA), Music (Piano), Chess.</>,
+        images: [],
       },
     ],
   },
@@ -191,95 +180,116 @@ const blog = {
   label: "Blog",
   title: "Writing about design and tech...",
   description: `Read what ${person.name} has been up to recently`,
-  // Create new blog posts by adding a new .mdx file to app/blog/posts
-  // All posts will be listed on the /blog route
 };
 
 const work = {
   label: "Work",
   title: "My projects",
   description: `Design and dev projects by ${person.name}`,
-  // Create new project pages by adding a new .mdx file to app/blog/posts
-  // All projects will be listed on the /home and /work routes
 };
 
 const gallery = {
   label: "Gallery",
   title: "My photo gallery",
-  description: `A photo collection by ${person.name}`,
-  // Images from https://pexels.com
+  description: `I love photography and was part of the clubs from both Télécom SudParis (Déclic, as training manager) and ENSAE (Vision, as photograph). \nHere are some photos I took during that time ^^`,
   images: [
     {
-      src: "/images/gallery/img-01.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/img-02.jpg",
-      alt: "image",
+      src: "/images/gallery/1.jpg",
+      alt: "image 1",
       orientation: "horizontal",
     },
     {
-      src: "/images/gallery/img-03.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/img-04.jpg",
-      alt: "image",
+      src: "/images/gallery/2.jpg",
+      alt: "image 2",
       orientation: "horizontal",
     },
     {
-      src: "/images/gallery/img-05.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/img-06.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/img-07.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/img-08.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/img-09.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/img-10.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/img-11.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/img-12.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/img-13.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/img-14.jpg",
-      alt: "image",
+      src: "/images/gallery/3.jpg",
+      alt: "image 3",
       orientation: "horizontal",
     },
   ],
 };
 
-export { person, social, newsletter, home, about, blog, work, gallery };
+const music = {
+  label: "Music",
+  title: "My Music",
+  description: `Here you can listen to some of my music, from beats I've made for SoundCloud to piano pieces I've played on Instagram.`,
+  social: [
+    {
+      name: "Instagram",
+      icon: "instagram",
+      link: "https://www.instagram.com/nathsdm_piano/?hl=en",
+    },
+    {
+      name: "SoundCloud",
+      icon: "soundcloud",
+      link: "https://soundcloud.com/fukuzawarudo",
+    },
+    {
+      name: "YouTube",
+      icon: "youtube",
+      link: "https://www.youtube.com/@polychordsradio",
+    },
+  ],
+  audio: [
+    {
+      title: "Broken Heart",
+      src: "/musics/BrokenHeart.mp3",
+      cover: "/musics/BrokenHeartCover.jpeg",
+    },
+    {
+      title: "Winter Soiree",
+      src: "/musics/WinterSoiree.mp3",
+      cover: "/musics/WinterSoireeCover.png",
+    },
+  ],
+  embeds: [
+    {
+      type: "instagram",
+      html: `<div style="display: flex; justify-content: center;">
+    <div style="
+        border-radius: 12px; 
+        overflow: hidden; 
+        width: 350px;">
+        
+        <iframe 
+            src="https://www.instagram.com/reel/DN8P5HUkVIZ/embed" 
+            width="100%" 
+            height="550" 
+            frameborder="0" 
+            scrolling="no" 
+            allowtransparency="true"
+            style="
+                filter: brightness(0.6) contrast(1.2); 
+            ">
+        </iframe>
+    </div>
+</div>`
+    },
+    {
+      type: "instagram",
+      html: `<div style="display: flex; justify-content: center;">
+    <div style="
+        border-radius: 12px; 
+        overflow: hidden; 
+        width: 350px;">
+        
+        <iframe 
+            src="https://www.instagram.com/reel/CQBM8FhBl3Z/embed" 
+            width="100%" 
+            height="550" 
+            frameborder="0" 
+            scrolling="no" 
+            allowtransparency="true"
+            style="
+                filter: brightness(0.6) contrast(1.2); 
+            ">
+        </iframe>
+    </div>
+</div>`
+    }
+  ],
+};
+
+export { person, social, newsletter, home, about, blog, work, gallery, music };

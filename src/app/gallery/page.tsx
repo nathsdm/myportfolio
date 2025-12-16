@@ -1,4 +1,4 @@
-import { Flex } from "@/once-ui/components";
+import { Flex, Heading, Text } from "@/once-ui/components";
 import MasonryGrid from "@/components/gallery/MasonryGrid";
 import { baseURL } from "@/app/resources";
 import { gallery, person } from "@/app/resources/content";
@@ -6,7 +6,7 @@ import { gallery, person } from "@/app/resources/content";
 export async function generateMetadata() {
   const title = gallery.title;
   const description = gallery.description;
-  const ogImage = `https://${baseURL}/og?title=${encodeURIComponent(title)}`;
+  const ogImage = `https://${baseURL}/images/cover.png`;
 
   return {
     title,
@@ -34,7 +34,7 @@ export async function generateMetadata() {
 
 export default function Gallery() {
   return (
-    <Flex fillWidth>
+    <Flex fillWidth direction="column" horizontal="center">
       <script
         type="application/ld+json"
         suppressHydrationWarning
@@ -61,6 +61,13 @@ export default function Gallery() {
           }),
         }}
       />
+      <Flex direction="column" horizontal="center" style={{ marginBottom: "2rem", position: "relative" }}>
+        {gallery.description.split('\n').map((line, index) => (
+          <Text key={index} variant="body-default-l">
+            {line}
+          </Text>
+        ))}
+      </Flex>
       <MasonryGrid />
     </Flex>
   );

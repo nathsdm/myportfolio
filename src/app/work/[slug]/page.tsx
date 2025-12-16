@@ -35,7 +35,7 @@ export function generateMetadata({ params: { slug } }: WorkParams) {
     image,
     team,
   } = post.metadata;
-  let ogImage = image ? `https://${baseURL}${image}` : `https://${baseURL}/og?title=${title}`;
+  let ogImage = image ? `https://${baseURL}${image}` : `https://${baseURL}/images/cover.png`;
 
   return {
     title,

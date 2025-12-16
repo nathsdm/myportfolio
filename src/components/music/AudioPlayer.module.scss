@@ -1,0 +1,46 @@
+.player {
+    background: var(--neutral-alpha-weak);
+    border: 1px solid var(--neutral-alpha-medium);
+    border-radius: var(--radius-l);
+    backdrop-filter: blur(var(--static-space-1));
+}
+
+.slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 4px;
+    background: var(--neutral-alpha-medium);
+    border-radius: var(--radius-full);
+    outline: none;
+    cursor: pointer;
+
+    &::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 12px;
+        height: 12px;
+        background: var(--brand-solid-strong);
+        border-radius: 50%;
+        cursor: pointer;
+        transition: transform 0.2s;
+
+        &:hover {
+            transform: scale(1.2);
+        }
+    }
+
+    &::-moz-range-thumb {
+        width: 12px;
+        height: 12px;
+        background: var(--brand-solid-strong);
+        border-radius: 50%;
+        cursor: pointer;
+        border: none;
+        transition: transform 0.2s;
+
+        &:hover {
+            transform: scale(1.2);
+        }
+    }
+}
